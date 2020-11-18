@@ -15,7 +15,7 @@ function Pokemon({ pokemon }) {
     )       
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths({locale}) {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     const pokemon = await res.json()
 
