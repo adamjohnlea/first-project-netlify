@@ -9,7 +9,7 @@ function Pokemon({ pokemon }) {
         </head>
         <div className='container'>
             Welcome, {pokemon?.name}!
-            <img src={pokemon?.sprites.front_default} />
+            <img src={pokemon?.sprites.front_default} alt='this is a pokemon' />
         </div> 
         </>
     )       
