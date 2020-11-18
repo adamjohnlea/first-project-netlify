@@ -24,7 +24,9 @@ export async function getStaticPaths() {
     })
 
     return {
-        paths,
+        paths : [
+            { params: {locale: 'en-US'} },
+        ],
         fallback: false
     }
 }
