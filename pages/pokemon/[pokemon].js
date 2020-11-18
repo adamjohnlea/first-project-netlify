@@ -9,13 +9,13 @@ function Pokemon({ pokemon }) {
         </head>
         <div className='container'>
             Welcome, {pokemon?.name}!
-            <img src={pokemon?.sprites.front_default} alt='this is a pokemon' />
+            <img src={pokemon?.sprites.front_default} alt='this is the' />
         </div> 
         </>
     )       
 }
 
-export async function getStaticPaths({locales}) {
+export async function getStaticPaths() {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     const pokemon = await res.json()
 
@@ -24,9 +24,7 @@ export async function getStaticPaths({locales}) {
     })
 
     return {
-        paths : [
-            { params: {locale: 'en-US'} },
-        ],
+        paths,
         fallback: false
     }
 }
